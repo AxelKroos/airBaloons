@@ -35,7 +35,7 @@ function arrayRandElement(arr) {
 }
 
 /*Создаём шарики и задаём начальную позицию*/
-for (let i = 0; i < 1000; i++) {
+for (let i = 0; i < 2; i++) {
     let airBaloon = document.createElement('div');
     airBaloon.id = `airBaloon${i}`;
     array.push(airBaloon.id);
@@ -46,7 +46,6 @@ for (let i = 0; i < 1000; i++) {
     field.appendChild(airBaloon);
     oldCoordsY.push(airBaloon.getBoundingClientRect().top);
     oldCoordsX.push(airBaloon.getBoundingClientRect().right);
-
 
     /*Интервально изменяем положение шарика*/
     setInterval(() => {
@@ -63,13 +62,31 @@ for (let i = 0; i < 1000; i++) {
             if (oldCoordsX[i] > img.getBoundingClientRect().right - 15 && oldCoordsX[i] < img.getBoundingClientRect().right + 15) {
                 oldCoordsY[i] = -50;
                 airBaloon.style.display = 'none';
-                window.score.innerHTML = +window.score.innerHTML + 1;
-                currentScore++;
+
+                /*Задаём градацию наград за шарики*/
+                if (airBaloon.style.background == 'green') {
+                    window.score.innerHTML = +window.score.innerHTML + 1;
+                    currentScore++;
+                } else if (airBaloon.style.background == 'red') {
+                    window.score.innerHTML = +window.score.innerHTML + 3;
+                    currentScore += 3;
+                } else if (airBaloon.style.background == 'blue') {
+                    window.score.innerHTML = +window.score.innerHTML + 5;
+                    currentScore += 5;
+                } else if (airBaloon.style.background == 'pink') {
+                    window.score.innerHTML = +window.score.innerHTML + 7;
+                    currentScore += 7;
+                } else if (airBaloon.style.background == 'gold') {
+                    window.score.innerHTML = +window.score.innerHTML + 10;
+                    currentScore += 10;
+                }
+
             }
         }
 
         airBaloon.style.position = 'absolute';
 
+        /*Создаём счётчик пропущенных шариков*/
         if (oldCoordsY[i] > -40 && oldCoordsY[i] < -20) {
             omitted++;
             oldCoordsY[i] = -100;
@@ -93,7 +110,7 @@ setTimeout(() => {
     score.style.left = '23%';
     score.innerHTML = `Игра окончена. Ваш счёт: ${currentScore} <br> <p style="color: red">Пропущено: ${omitted}<p>`;
     console.log(omitted)
-}, 60000);
+}, 5000);
 
 
 
