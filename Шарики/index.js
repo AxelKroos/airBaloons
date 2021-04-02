@@ -1,5 +1,6 @@
 let field = document.querySelector('#field');
 let img = document.querySelector('img');
+let colors = ['green', 'red', 'blue', 'pink', 'gold'];
 let array = [];
 let omitted = 0;
 
@@ -41,6 +42,7 @@ for (let i = 0; i < 1000; i++) {
     airBaloon.classList.add('airBaloon');
     airBaloon.style.top = '400px';
     airBaloon.style.left = arrayRandElement(arr);
+    airBaloon.style.background = arrayRandElement(colors);
     field.appendChild(airBaloon);
     oldCoordsY.push(airBaloon.getBoundingClientRect().top);
     oldCoordsX.push(airBaloon.getBoundingClientRect().right);
