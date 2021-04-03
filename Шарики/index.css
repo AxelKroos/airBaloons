@@ -1,0 +1,100 @@
+body {
+    background: #253f62;
+    width: 1200px;
+    margin: 0 auto;
+    overflow-x:hidden;
+}
+
+#rules {
+    font-family: fantasy;
+    font-size: 20px;
+    position: absolute;
+    left: 100px;
+    top: 200px;
+    text-align: center;
+    color: #e2dfcd;
+}
+
+.score {
+    position: relative;
+    left: 40%;
+    top: 127px;
+    font-size: 50px;
+    font-family: 'Comic Sans MS';
+    color: gold;
+    transition: 1s;
+}
+
+#score {
+    position: relative;
+    top: -118px;
+    left: 239px;
+}
+
+#timer {
+    position: relative;
+    left: 49%;
+    font-size: 50px;
+    font-family: 'Comic Sans MS';
+    color: #d3d2ca;
+}
+
+img {
+    position: relative;
+    width: 5px;
+    height: 55px;
+    transition-duration: .2s;
+}
+
+#field {
+    width: 800px;
+    height: 500px;
+    border: 2px solid;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+    overflow: hidden;
+    background: url("background.jpg"), rgba(255,255,255,0.9);
+    box-shadow: 0 0 2px rgba(202,228,225,0.92),
+    0 0 1px rgb(167 79 44 / 34%),
+    0 0 5px rgb(144 103 39 / 52%),
+    0 0 4px rgb(148 102 28 / 92%),
+    0 0 1px rgb(149 105 21 / 78%),
+    0 0 18px rgb(90 67 17 / 92%);
+}
+
+.airBaloon{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -o-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.airBaloon:after {
+    content: "";
+
+    width: 20px;
+    height: 20px;
+
+    -moz-border-radius: 40px / 20px;
+    -ms-border-radius: 40px / 20px;
+    -webkit-border-radius: 40px / 20px;
+    -o-border-radius: 40px / 20px;
+    border-radius: 40px / 20px;
+
+    position: relative;
+    left: 0px;
+    top: 0px;
+
+    background: #fff;
+
+    background: -webkit-linear-gradient(top, rgba(232,232,232,1) 0%,rgba(232,232,232,1) 1%,rgba(255,255,255,0) 100%);
+    background: -moz-linear-gradient(top, rgba(232,232,232,1) 0%,rgba(232,232,232,1) 1%,rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(top, rgba(232,232,232,1) 0%,rgba(232,232,232,1) 1%,rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(top, rgba(232,232,232,1) 0%,rgba(232,232,232,1) 1%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(top, rgba(232,232,232,1) 0%,rgba(232,232,232,1) 1%,rgba(255,255,255,0) 100%);
+}
